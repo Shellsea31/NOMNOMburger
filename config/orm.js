@@ -1,20 +1,16 @@
 const connection = require("./connection");
 
-selectAll();
-insertOne();
-updateOne();
-
 // create the methods that will execute the necessary MySQL commands in the controllers.
-const ORM = {
-  selectAll: function () {
+const orm = {
+  selectAll() {
     console.log("select all");
   },
-  insertOne: function () {
+  insertOne() {
     console.log("insert one");
   },
-  updateOne: function () {
+  updateOne() {
     console.log("update one");
   },
 };
 
-module.exports = ORM;
+module.exports = orm;
