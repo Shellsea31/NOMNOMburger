@@ -4,7 +4,7 @@ const orm = require("./config/orm");
 
 // create and export the code that will call the ORM functions using burger specific input for the ORM.
 
-orm.selectAll("burgers");
+// orm.selectAll("burgers");
 // orm.insertOne(
 //   "burgers",
 //   "burger_name",
@@ -12,3 +12,5 @@ orm.selectAll("burgers");
 //   "Chilly Cheese Burger",
 //   true
 // );
+
+// orm.updateOne("burgers", "burger_name", "Double Cheese Burger", "id", 3);

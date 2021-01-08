@@ -18,8 +18,15 @@ const orm = {
       }
     );
   },
-  updateOne() {
-    console.log("update one");
+  updateOne(table, column, colVal, condition, condVal) {
+    connection.query(
+      "UPDATE ?? SET ?? = ? WHERE ?? = ?",
+      [table, column, colVal, condition, condVal],
+      (err, data) => {
+        if (err) throw err;
+        console.log(data);
+      }
+    );
   },
 };
 
