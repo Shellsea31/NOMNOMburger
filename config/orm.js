@@ -3,9 +3,9 @@ const connection = require("./connection");
 // create the methods that will execute the necessary MySQL commands in the controllers.
 const orm = {
   selectAll(table, cb) {
-    connection.query("SELECT * FROM ??", [table], (err, data) => {
+    connection.query("SELECT * FROM ??", [table], (err, result) => {
       if (err) throw err;
-      cb(data);
+      cb(result);
     });
   },
   insertOne(table, param1, param2, param1Val, param2Val, cb) {
