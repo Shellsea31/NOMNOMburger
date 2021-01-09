@@ -16,9 +16,15 @@ const burger = {
       (result) => console.log(result.affectedRows)
     );
   },
+  updateOne(colVal, condVal) {
+    orm.updateOne("burgers", "burger_name", colVal, "id", condVal, (result) =>
+      console.log(result.affectedRows)
+    );
+  },
 };
 
-burger.selectAll();
-burger.insertOne("Fried Burger", false)
+// burger.updateOne("Mushroom NO Bacon burger", 1);
+// burger.selectAll();
+// burger.insertOne("Fried Burger", false);
 
 module.exports = burger;
