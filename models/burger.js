@@ -1,19 +1,23 @@
-const { insertOne } = require("../config/orm");
-const orm = require("../config/orm");
+const orm = require("../config/orm.js");
 
 // create and export the code that will call the ORM functions using burger specific input for the ORM.
 const burger = {
-  selectAll() {
-    orm.selectAll("burgers", (result) => console.log(result));
+  selectAll(cb) {
+    orm.selectAll("burgers", (res) => {
+      cb(res);
+    });
   },
-  insertOne(param1Val, param2Val) {
+  // selectAll(cb) {
+  //   orm.selectAll('burgers', (result) => cb(result));
+  // },
+  insertOne(param1Val, param2Val, cb) {
     orm.insertOne(
       "burgers",
       "burger_name",
       "devoured",
       param1Val,
       param2Val,
-      (result) => console.log(result.affectedRows)
+      (result) => cb(result)
     );
   },
   updateOne(colVal, condVal) {
@@ -25,6 +29,8 @@ const burger = {
 
 // burger.updateOne("Mushroom NO Bacon burger", 1);
 // burger.selectAll();
-// burger.insertOne("Fried Burger", false);
+// burger.insertOne("Deep Fried Burger", false, (data) => {
+//   console.log(data);
+// });
 
 module.exports = burger;
