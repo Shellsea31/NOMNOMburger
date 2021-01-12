@@ -7,9 +7,6 @@ const burger = {
       cb(res);
     });
   },
-  // selectAll(cb) {
-  //   orm.selectAll('burgers', (result) => cb(result));
-  // },
   insertOne(param1Val, param2Val, cb) {
     orm.insertOne(
       "burgers",
@@ -22,15 +19,9 @@ const burger = {
   },
   updateOne(colVal, condVal) {
     orm.updateOne("burgers", "burger_name", colVal, "id", condVal, (result) =>
-      console.log(result.affectedRows)
+      cb(result)
     );
   },
 };
-
-// burger.updateOne("Mushroom NO Bacon burger", 1);
-// burger.selectAll();
-// burger.insertOne("Deep Fried Burger", false, (data) => {
-//   console.log(data);
-// });
 
 module.exports = burger;

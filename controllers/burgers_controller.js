@@ -5,8 +5,6 @@ const router = express.Router();
 
 const burger = require("../models/burger.js");
 
-// burger.selectAll();
-
 router.get("/", (req, res) => {
   burger.selectAll((result) => {
     const obj = {
@@ -24,6 +22,8 @@ router.post("/api/burgers", (req, res) => {
   });
 });
 
-router.put("/api/burgers/:id", );
+// router.put("/api/burgers/:id", (req, res)=>{
+//   burger.updateOne()
+// });
 
 module.exports = router;

@@ -3,19 +3,30 @@
 {{!-- create a button that will submit the user input into the database --}}
 
 
-<h2>NOMNOM!</h2>
-
-<h2>Add a Burger</h2>
-
-<ul>
+{{!-- <ul>
   	<li>
   	   <p>ID:</p>
        <p>Task:</p>
   	</li>
-</ul>
+</ul> --}}
 
-<form>
-	<textarea type="text" name="burger"></textarea>
+   
 
-	<button type="submit">Submit</button>
+
+
+<div class="container-fluid">
+ <div class="card mx-auto mt-5" style="width: 200px;">
+  <img class="card-img-top" src="assets/img/krabby_patty.gif" alt="krabby_patty">
+</div>
+
+<div class="mx-auto text-center mt-5" style="width: 200px;">
+  <div class="card-body">
+    <form>
+  <div class="form-group">
+    <input type="input" class="form-control" id="burgerId" placeholder="Add a Burger">
+  </div>
+  <button id="submitBtn" type="submit" class="btn btn-info">Add</button>
 </form>
+  </div>
+</div>
+</div>
