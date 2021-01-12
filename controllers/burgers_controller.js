@@ -23,7 +23,6 @@ router.post("/api/burgers", (req, res) => {
 
 router.put("/api/burgers/:id", (req, res) => {
   burger.updateOne(req.params.id, (data) => {
-    console.log(data);
 
     if (data.affectedRows === 0) {
       return res.status(400).end();

@@ -1,4 +1,3 @@
-// console.log("hello")
 document.addEventListener("DOMContentLoaded", (e) => {
   if (e) {
     console.log("DOM loaded");
@@ -24,7 +23,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
         body: JSON.stringify(newBurger),
       }).then(() => {
         document.getElementById("burger").value = "";
-        console.log("Added a Burger!");
         location.reload();
       });
     });
@@ -34,11 +32,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
     devourBtns.forEach((btn) => {
       btn.addEventListener("click", (e) => {
         const id = e.target.getAttribute("data-id");
-        const devoured = 1;
 
         const devouredBurger = {
           id: id,
-          devoured: devoured,
         };
         // console.log(id)
         fetch(`/api/burgers/${id}`, {
@@ -48,6 +44,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(devouredBurger),
+        }).then(() => {
+          location.reload("/");
         });
       });
     });

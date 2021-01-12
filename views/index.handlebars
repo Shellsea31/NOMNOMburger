@@ -21,7 +21,12 @@
             <h4 class="card-title">Devoured:</h4>
 
             <ul>
-              {{#each burgers}} {{#if devoured}} {{burger_name}} {{/if}}
+              {{#each burgers}} 
+              {{#if devoured}}
+              <li>
+                {{burger_name}}
+              </li>  
+              {{/if}}
               {{/each}}
             </ul>
           </div>
