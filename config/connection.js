@@ -1,12 +1,24 @@
-const mysql = require("mysql");
+var mysql = require("mysql");
+var connection;
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "ShellseaFS2020!",
+    database: "burgers_db",
+    port: 3306,
+  });
+}
 
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "ShellseaFS2020!",
-  database: "burgers_db",
-  port: 3306,
-});
+// var connection = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "ShellseaFS2020!",
+//   database: "burgers_db",
+//   port: 3306,
+// });
 
 connection.connect((err) => {
   if (err) {
