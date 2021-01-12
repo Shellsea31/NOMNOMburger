@@ -16,9 +16,7 @@ The program is meant to allow the user to add content to the data and then see t
 
 <img width="904" alt="burger - Copy" src="https://user-images.githubusercontent.com/70654835/104363435-05101880-54ca-11eb-9b21-e2a08679139a.png">
 
-**See the Live app [here]()**
-
-## Contributors
+**See the Live app [here](https://krabbypatty-app.herokuapp.com/)**
 
 ## Contributors
 
