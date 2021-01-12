@@ -34,7 +34,21 @@ document.addEventListener("DOMContentLoaded", (e) => {
     devourBtns.forEach((btn) => {
       btn.addEventListener("click", (e) => {
         const id = e.target.getAttribute("data-id");
-        console.log(id)
+        const devoured = 1;
+
+        const devouredBurger = {
+          id: id,
+          devoured: devoured,
+        };
+        // console.log(id)
+        fetch(`/api/burgers/${id}`, {
+          method: "PUT",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(devouredBurger),
+        });
       });
     });
   }
