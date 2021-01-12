@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   }
 
   const submitBtn = document.getElementById("form");
+  const devourBtns = document.querySelectorAll(".devourBtn");
 
   if (submitBtn) {
     submitBtn.addEventListener("submit", (e) => {
@@ -25,6 +26,15 @@ document.addEventListener("DOMContentLoaded", (e) => {
         document.getElementById("burger").value = "";
         console.log("Added a Burger!");
         location.reload();
+      });
+    });
+  }
+
+  if (devourBtns) {
+    devourBtns.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const id = e.target.getAttribute("data-id");
+        console.log(id)
       });
     });
   }

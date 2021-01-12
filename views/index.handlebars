@@ -3,53 +3,55 @@
 {{!-- create a button that will submit the user input into the database --}}
 
 
-<div class="container">
-<div class="row">
-	
-<div class="col-md-6">
-<div class="card">
-<h4>To Eat:</h4>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card mt-5 mx-auto text-center text-white bg-dark">
+            <h4 class="card-title">To Eat:</h4>
 
-<ul>
-  {{#each burgers}}
-  {{#unless devoured}}
-  {{> burgers/burger-block devoured=true}}
-  {{/unless}}
-  {{/each}}
-</ul>
-</div>
-</div>
+            <ul>
+              {{#each burgers}} {{#unless devoured}} {{> burgers/burger-block
+              devoured=true}} {{/unless}} {{/each}}
+            </ul>
+          </div>
+        </div>
 
-<div class="col-md-6">
-<div class="card">
-<h4>Devoured</h4>
+        <div class="col-md-6">
+          <div class="card mt-5 mx-auto text-center text-white bg-dark">
+            <h4 class="card-title">Devoured:</h4>
 
-<ul>
-  {{#each burgers}}
-  {{#if devoured}}
-  {{burger_name}}
-  {{/if}}
-  {{/each}}
-</ul>
-</div>
-</div>
-</div>
-</div>
+            <ul>
+              {{#each burgers}} {{#if devoured}} {{burger_name}} {{/if}}
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 <div class="container-fluid">
- <div class="card mx-auto mt-5" style="width: 200px;">
-  <img class="card-img-top" src="assets/img/krabby_patty.gif" alt="krabby_patty">
-</div>
+      <div class="card mx-auto mt-5" style="width: 200px">
+        <img
+          class="card-img-top"
+          src="assets/img/krabby_patty.gif"
+          alt="krabby_patty"
+        />
+      </div>
 
-<div class="mx-auto text-center mt-5" style="width: 200px;">
-  <div class="card-body">
-    <form id="form">
-  <div class="form-group">
-    <input type="input" class="form-control" id="burger" placeholder="Add a Burger">
-  </div>
-  <button type="submit" class="btn btn-info">Add</button>
-</form>
-  </div>
-</div>
-</div>
+      <div class="mx-auto text-center mt-5" style="width: 200px">
+        <div class="card-body">
+          <form id="form">
+            <div class="form-group">
+              <input
+                type="input"
+                class="form-control"
+                id="burger"
+                placeholder="Add a Burger"
+              />
+            </div>
+            <button type="submit" class="btn btn-info">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
