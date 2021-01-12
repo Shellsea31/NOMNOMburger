@@ -3,15 +3,38 @@
 {{!-- create a button that will submit the user input into the database --}}
 
 
-{{!-- <ul>
-  	<li>
-  	   <p>ID:</p>
-       <p>Task:</p>
-  	</li>
-</ul> --}}
+<div class="container">
+<div class="row">
+	
+<div class="col-md-6">
+<div class="card">
+<h4>To Eat:</h4>
 
-   
+<ul>
+  {{#each burgers}}
+  {{#unless devoured}}
+  {{> burgers/burger-block devoured=true}}
+  {{/unless}}
+  {{/each}}
+</ul>
+</div>
+</div>
 
+<div class="col-md-6">
+<div class="card">
+<h4>Devoured</h4>
+
+<ul>
+  {{#each burgers}}
+  {{#if devoured}}
+  {{> burgers/burger-block devoured=false}}
+  {{/if}}
+  {{/each}}
+</ul>
+</div>
+</div>
+</div>
+</div>
 
 
 <div class="container-fluid">
@@ -21,11 +44,11 @@
 
 <div class="mx-auto text-center mt-5" style="width: 200px;">
   <div class="card-body">
-    <form>
+    <form id="form">
   <div class="form-group">
-    <input type="input" class="form-control" id="burgerId" placeholder="Add a Burger">
+    <input type="input" class="form-control" id="burger" placeholder="Add a Burger">
   </div>
-  <button id="submitBtn" type="submit" class="btn btn-info">Add</button>
+  <button type="submit" class="btn btn-info">Add</button>
 </form>
   </div>
 </div>

@@ -7,13 +7,13 @@ const burger = {
       cb(res);
     });
   },
-  insertOne(param1Val, param2Val, cb) {
+  insertOne(param1Val, cb) {
     orm.insertOne(
       "burgers",
       "burger_name",
       "devoured",
       param1Val,
-      param2Val,
+      0,
       (result) => cb(result)
     );
   },
